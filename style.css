@@ -1,9 +1,7 @@
 /* ========================================
-   CHLOE & DYLAN — WEDDING PHOTO UPLOAD
-   Professional Wedding Theme
+   CHLOE & DYLAN
+   WEDDING PHOTO COLLECTION
 ======================================== */
-
-/* ---------- RESET ---------- */
 
 * {
     box-sizing: border-box;
@@ -17,159 +15,302 @@ html {
 
 body {
     min-height: 100vh;
+    background: #f8f6f2;
+    color: #292725;
     font-family: Georgia, "Times New Roman", serif;
-    background:
-        radial-gradient(circle at top, rgba(255, 255, 255, 0.95), transparent 45%),
-        linear-gradient(135deg, #f8f5f0, #eee8df);
-    color: #2d2926;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 18px;
 }
 
-/* ---------- MAIN CONTAINER ---------- */
+/* ========================================
+   PAGE
+======================================== */
 
-.container {
+.page {
     width: 100%;
-    max-width: 760px;
+    overflow: hidden;
+}
+
+/* ========================================
+   HERO
+======================================== */
+
+.hero {
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    padding: 80px 24px;
+    background:
+        linear-gradient(
+            rgba(248, 246, 242, 0.72),
+            rgba(248, 246, 242, 0.94)
+        );
+    position: relative;
 }
 
-/* ---------- HEADER ---------- */
-
-header {
-    margin-bottom: 34px;
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border: 1px solid rgba(142, 119, 95, 0.16);
+    border-radius: 50%;
+    top: -210px;
+    left: -210px;
 }
 
-.eyebrow {
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border: 1px solid rgba(142, 119, 95, 0.12);
+    border-radius: 50%;
+    bottom: -150px;
+    right: -150px;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-eyebrow {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.72rem;
     font-weight: 600;
-    letter-spacing: 0.28em;
-    text-transform: uppercase;
-    color: #8b8177;
+    letter-spacing: 0.32em;
+    color: #8b7a69;
+    margin-bottom: 22px;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 11vw, 7.5rem);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    color: #262320;
+}
+
+.hero h1 span {
+    font-style: italic;
+    color: #9b8068;
+}
+
+.hero p {
+    max-width: 520px;
+    margin: 28px auto 0;
+    color: #756d66;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* ========================================
+   BUTTON
+======================================== */
+
+.hero a,
+.choose-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 15px 30px;
+    border-radius: 999px;
+    background: #302b27;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    border: none;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hero a:hover,
+.choose-button:hover {
+    background: #4a4038;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(48, 43, 39, 0.16);
+}
+
+/* ========================================
+   MEMORIES SECTION
+======================================== */
+
+.memories {
+    padding: 100px 20px;
+    background: #ffffff;
+}
+
+.memories-header {
+    max-width: 680px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-label {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    color: #9a8775;
     margin-bottom: 14px;
 }
 
-h1 {
-    font-size: clamp(2.5rem, 8vw, 4.5rem);
+.memories h2 {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
     font-weight: 400;
-    line-height: 1;
-    letter-spacing: -0.03em;
-    color: #292522;
+    color: #292623;
 }
 
-.ampersand {
-    font-style: italic;
-    color: #a48d79;
-}
-
-.subtitle {
-    margin-top: 16px;
-    font-size: 1.05rem;
-    line-height: 1.7;
-    color: #756c64;
-}
-
-/* ---------- CARD ---------- */
-
-.card {
-    background: rgba(255, 255, 255, 0.88);
-    border: 1px solid rgba(137, 120, 104, 0.16);
-    border-radius: 24px;
-    padding: clamp(24px, 6vw, 44px);
-    box-shadow:
-        0 20px 60px rgba(70, 58, 47, 0.09),
-        0 3px 12px rgba(70, 58, 47, 0.04);
-    backdrop-filter: blur(10px);
-}
-
-/* ---------- SECTION TITLE ---------- */
-
-.card h2 {
-    font-size: 1.65rem;
-    font-weight: 400;
-    margin-bottom: 8px;
-}
-
-.card-description {
+.memories-header p {
+    margin-top: 18px;
+    color: #817871;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    color: #827970;
-    margin-bottom: 28px;
-    line-height: 1.6;
+    font-size: 0.92rem;
+    line-height: 1.8;
 }
 
-/* ---------- UPLOAD BOX ---------- */
+/* ========================================
+   UPLOAD SECTION
+======================================== */
 
-#uploadBox {
-    position: relative;
-    border: 1.5px dashed #b9aa9b;
-    border-radius: 18px;
-    padding: 42px 24px;
-    background: #faf8f5;
+.upload-section {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.upload-card {
+    padding: 45px;
+    border: 1px solid #e7e0d8;
+    border-radius: 24px;
+    background: #faf9f7;
+    box-shadow:
+        0 20px 60px rgba(52, 44, 37, 0.07);
+}
+
+/* ========================================
+   UPLOAD AREA
+======================================== */
+
+.upload-box {
+    padding: 55px 25px;
+    border: 1.5px dashed #c6b8a9;
+    border-radius: 20px;
+    text-align: center;
+    background: #ffffff;
     transition:
-        border-color 0.25s ease,
         background 0.25s ease,
-        transform 0.25s ease,
-        box-shadow 0.25s ease;
+        border-color 0.25s ease,
+        transform 0.25s ease;
 }
 
-#uploadBox:hover,
-#uploadBox.dragging {
-    border-color: #927b67;
-    background: #f7f2ec;
+.upload-box:hover,
+.upload-box.dragging {
+    background: #faf7f3;
+    border-color: #9e8975;
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(70, 58, 47, 0.07);
 }
-
-/* ---------- UPLOAD ICON ---------- */
 
 .upload-icon {
-    width: 62px;
-    height: 62px;
-    margin: 0 auto 18px;
-    border-radius: 50%;
-    background: #eee6dc;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.65rem;
-    color: #806d5b;
+    border-radius: 50%;
+    background: #eee7df;
+    font-size: 1.8rem;
 }
 
-/* ---------- UPLOAD TEXT ---------- */
-
-#uploadBox h3 {
-    font-size: 1.25rem;
+.upload-box h3 {
+    font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 8px;
+    color: #302b27;
 }
 
-#uploadBox p {
+.upload-box p {
+    margin-top: 9px;
+    color: #8b8179;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.85rem;
-    color: #8a8179;
-    line-height: 1.6;
+    font-size: 0.82rem;
 }
-
-/* ---------- FILE INPUT ---------- */
 
 #photoInput {
     display: none;
 }
 
-/* ---------- SELECT BUTTON ---------- */
+/* ========================================
+   PHOTO COUNT
+======================================== */
 
-.select-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 22px;
-    padding: 13px 25px;
+#photoCount {
+    margin: 18px 0;
+    text-align: center;
+    color: #81766d;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.82rem;
+}
+
+/* ========================================
+   PREVIEW GRID
+======================================== */
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.photo-preview {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1;
+    border-radius: 15px;
+    background: #eee9e4;
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.remove-photo {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(35, 31, 28, 0.78);
+    color: #ffffff;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+/* ========================================
+   SEND BUTTON
+======================================== */
+
+#submitButton {
+    width: 100%;
+    margin-top: 25px;
+    padding: 16px;
+    border: none;
     border-radius: 999px;
-    background: #332e2a;
+    background: #302b27;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 0.85rem;
@@ -177,244 +318,189 @@ h1 {
     cursor: pointer;
     transition:
         background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
-.select-button:hover {
-    background: #4a423b;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(45, 41, 38, 0.15);
-}
-
-.select-button:active {
-    transform: translateY(0);
-}
-
-/* ---------- PREVIEW SECTION ---------- */
-
-#previewSection {
-    margin-top: 30px;
-}
-
-#previewSection h3 {
-    font-size: 1.25rem;
-    font-weight: 400;
-    margin-bottom: 6px;
-}
-
-#photoCount {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #8b8177;
-    font-size: 0.82rem;
-    margin-bottom: 18px;
-}
-
-/* ---------- PREVIEW GRID ---------- */
-
-#previewGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 24px;
-}
-
-.photo-preview {
-    position: relative;
-    aspect-ratio: 1;
-    overflow: hidden;
-    border-radius: 14px;
-    background: #eee9e3;
-    box-shadow: 0 5px 18px rgba(50, 42, 35, 0.08);
-}
-
-.photo-preview img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-}
-
-/* ---------- REMOVE PHOTO ---------- */
-
-.remove-photo {
-    position: absolute;
-    top: 7px;
-    right: 7px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(35, 31, 28, 0.75);
-    color: white;
-    font-size: 1.15rem;
-    line-height: 1;
-    cursor: pointer;
-    backdrop-filter: blur(4px);
-    transition:
-        background 0.2s ease,
         transform 0.2s ease;
 }
 
-.remove-photo:hover {
-    background: rgba(35, 31, 28, 0.95);
-    transform: scale(1.06);
-}
-
-/* ---------- SEND BUTTON ---------- */
-
-#submitButton {
-    width: 100%;
-    border: none;
-    border-radius: 999px;
-    padding: 16px 24px;
-    background: #332e2a;
-    color: #ffffff;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease,
-        box-shadow 0.2s ease;
-}
-
 #submitButton:hover:not(:disabled) {
-    background: #4a423b;
+    background: #4a4038;
     transform: translateY(-1px);
-    box-shadow: 0 10px 24px rgba(45, 41, 38, 0.16);
 }
 
 #submitButton:disabled {
-    opacity: 0.6;
+    opacity: 0.55;
     cursor: wait;
 }
 
-/* ---------- SUCCESS MESSAGE ---------- */
+/* ========================================
+   PRIVATE COLLECTION
+======================================== */
+
+.privacy-section {
+    max-width: 780px;
+    margin: 35px auto 0;
+    padding: 28px 30px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    border-radius: 18px;
+    background: #f3eee8;
+    text-align: left;
+}
+
+.privacy-icon {
+    font-size: 1.5rem;
+}
+
+.privacy-section h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.privacy-section p {
+    color: #81776f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.78rem;
+    line-height: 1.6;
+}
+
+/* ========================================
+   SUCCESS MESSAGE
+======================================== */
 
 #successMessage {
-    padding: 28px 12px 8px;
+    text-align: center;
+    padding: 40px 20px;
 }
 
 .success-icon {
-    width: 68px;
-    height: 68px;
-    margin: 0 auto 18px;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
     border-radius: 50%;
-    background: #eee6dc;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #eee7df;
     font-size: 1.7rem;
-    color: #806d5b;
 }
 
 #successMessage h2 {
-    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 #successMessage p {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #7d746d;
-    font-size: 0.9rem;
-    line-height: 1.7;
     max-width: 430px;
-    margin: 0 auto 22px;
+    margin: 12px auto 0;
+    color: #81776f;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.85rem;
+    line-height: 1.7;
 }
-
-/* ---------- ADD MORE BUTTON ---------- */
 
 #addMoreButton {
-    border: 1px solid #c8bbb0;
+    margin-top: 22px;
+    padding: 12px 24px;
+    border: 1px solid #c9bbad;
     border-radius: 999px;
-    padding: 12px 22px;
     background: transparent;
-    color: #4c443e;
+    color: #514941;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    transition:
-        background 0.2s ease,
-        border-color 0.2s ease;
 }
 
-#addMoreButton:hover {
-    background: #f4eee8;
-    border-color: #a99786;
-}
-
-/* ---------- FOOTER ---------- */
+/* ========================================
+   FOOTER
+======================================== */
 
 footer {
-    margin-top: 26px;
+    padding: 45px 20px;
+    text-align: center;
+    background: #292521;
+    color: #bdb2a8;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.7rem;
-    color: #a19890;
+    font-size: 0.72rem;
     letter-spacing: 0.04em;
 }
 
-/* ---------- HIDDEN ---------- */
+footer strong {
+    display: block;
+    margin-bottom: 8px;
+    color: #eee8e1;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* ========================================
+   HIDDEN
+======================================== */
 
 [hidden] {
     display: none !important;
 }
 
-/* ---------- MOBILE ---------- */
+/* ========================================
+   MOBILE
+======================================== */
 
 @media (max-width: 600px) {
 
-    body {
-        padding: 20px 12px;
-        align-items: flex-start;
+    .hero {
+        min-height: 75vh;
+        padding: 60px 20px;
     }
 
-    .container {
-        margin-top: 20px;
+    .hero h1 {
+        font-size: clamp(3.4rem, 17vw, 5rem);
     }
 
-    header {
-        margin-bottom: 24px;
-    }
-
-    h1 {
-        font-size: 2.8rem;
-    }
-
-    .subtitle {
+    .hero p {
         font-size: 0.95rem;
-        padding: 0 12px;
     }
 
-    .card {
-        padding: 22px 17px;
-        border-radius: 20px;
+    .memories {
+        padding: 70px 15px;
     }
 
-    #uploadBox {
-        padding: 34px 17px;
+    .upload-card {
+        padding: 18px;
+        border-radius: 19px;
     }
 
-    #previewGrid {
+    .upload-box {
+        padding: 42px 18px;
+    }
+
+    .preview-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 9px;
     }
+
+    .privacy-section {
+        padding: 22px;
+        align-items: flex-start;
+    }
 }
 
-/* ---------- SMALL PHONES ---------- */
+/* ========================================
+   SMALL PHONES
+======================================== */
 
 @media (max-width: 380px) {
 
-    h1 {
-        font-size: 2.4rem;
+    .hero h1 {
+        font-size: 3.1rem;
     }
 
-    .card {
-        padding: 19px 14px;
+    .upload-card {
+        padding: 12px;
     }
 
-    #uploadBox {
-        padding: 30px 14px;
+    .upload-box {
+        padding: 35px 14px;
     }
 }
