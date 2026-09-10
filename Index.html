@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+```
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<meta
+    name="description"
+    content="Share your favorite memories from Chloe and Dylan's wedding."
+>
+
+<title>Chloe & Dylan | Wedding Memories</title>
+
+<link rel="stylesheet" href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<main class="page">
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content">
+
+            <p class="eyebrow">THE WEDDING OF</p>
+
+            <h1>
+                Chloe
+                <span>&amp;</span>
+                Dylan
+            </h1>
+
+            <p class="hero-subtitle">
+                Help us capture the moments we might have missed.
+            </p>
+
+            <a href="#upload" class="hero-button">
+                Share Your Photos
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- UPLOAD SECTION -->
+    <section class="upload-section" id="upload">
+
+        <div class="section-content">
+
+            <p class="section-label">OUR MEMORIES</p>
+
+            <h2>
+                Share the moments
+            </h2>
+
+            <p class="section-description">
+                Have photos from today that you'd love Chloe and
+                Dylan to have? Add them to their private wedding
+                collection.
+            </p>
+
+
+            <!-- PHOTO PICKER -->
+            <div class="upload-box" id="uploadBox">
+
+                <div class="upload-icon">
+                    📸
+                </div>
+
+                <h3>
+                    Add your photos
+                </h3>
+
+                <p>
+                    Select photos from your phone or computer
+                </p>
+
+                <label
+                    for="photoInput"
+                    class="choose-button"
+                >
+                    Choose Photos
+                </label>
+
+                <input
+                    type="file"
+                    id="photoInput"
+                    accept="image/*"
+                    multiple
+                    hidden
+                >
+
+                <p class="upload-limit">
+                    You can select multiple photos
+                </p>
+
+            </div>
+
+
+            <!-- PREVIEW AREA -->
+            <div
+                class="preview-section"
+                id="previewSection"
+                hidden
+            >
+
+                <div class="preview-header">
+
+                    <h3>
+                        Your Photos
+                    </h3>
+
+                    <span id="photoCount">
+                        0 photos
+                    </span>
+
+                </div>
+
+                <div
+                    class="preview-grid"
+                    id="previewGrid"
+                ></div>
+
+
+                <button
+                    class="submit-button"
+                    id="submitButton"
+                    type="button"
+                >
+                    Send Photos
+                </button>
+
+                <p class="privacy-note">
+                    🔒 Your photos are sent to Chloe and Dylan's
+                    private collection. Guests cannot view the
+                    collection.
+                </p>
+
+            </div>
+
+
+            <!-- SUCCESS MESSAGE -->
+            <div
+                class="success-message"
+                id="successMessage"
+                hidden
+            >
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+                <h2>
+                    Photos sent!
+                </h2>
+
+                <p>
+                    Thank you for helping Chloe and Dylan remember
+                    their special day. ❤️
+                </p>
+
+                <button
+                    class="secondary-button"
+                    id="addMoreButton"
+                    type="button"
+                >
+                    Add More Photos
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRIVACY SECTION -->
+    <section class="privacy-section">
+
+        <div class="privacy-card">
+
+            <div class="lock-icon">
+                🔒
+            </div>
+
+            <div>
+
+                <h3>
+                    Private wedding collection
+                </h3>
+
+                <p>
+                    Photos uploaded here are kept private for
+                    Chloe and Dylan. There is no public photo
+                    gallery.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            Chloe &amp; Dylan
+        </p>
+
+        <span>
+            Made with love ❤️
+        </span>
+
+    </footer>
+
+</main>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+</html>
