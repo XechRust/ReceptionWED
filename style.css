@@ -1,24 +1,22 @@
-/* ========================================
-   CHLOE & DYLAN
-   WEDDING PHOTO COLLECTION
-======================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap');
 
 :root {
-    --ink: #252321;
-    --muted: #756d68;
-    --clay: #a56f61;
-    --clay-dark: #805148;
-    --cream: #f8f4ee;
+    --ink: #292522;
+    --muted: #756c65;
+    --clay: #a36656;
+    --clay-dark: #7d4c40;
+    --cream: #f8f3ec;
     --paper: #fffdf9;
-    --line: rgba(112, 79, 66, 0.18);
+    --line: rgba(111, 76, 61, 0.17);
 }
+
+/* =========================================
+   CHLOE & DYLAN — GUEST WEDDING SITE
+   Mobile-first responsive design
+========================================= */
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 html {
@@ -26,539 +24,697 @@ html {
 }
 
 body {
-    min-height: 100vh;
+    margin: 0;
     background: var(--cream);
     color: var(--ink);
-    font-family: "DM Sans", Arial, sans-serif;
+    font-family:
+        "DM Sans",
+        Arial,
+        sans-serif;
 }
 
-/* ========================================
-   PAGE
-======================================== */
+button,
+input,
+label {
+    font: inherit;
+}
+
+button,
+label {
+    -webkit-tap-highlight-color: transparent;
+}
 
 .page {
     width: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
-/* ========================================
+
+/* =========================================
    HERO
-======================================== */
+========================================= */
 
 .hero {
-    min-height: 78vh;
+    position: relative;
+
+    min-height: 100svh;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 80px 24px;
+
+    padding: 40px 20px;
+
     background:
-        radial-gradient(circle at 15% 20%, rgba(196, 141, 123, 0.18), transparent 29%),
-        radial-gradient(circle at 86% 76%, rgba(221, 193, 165, 0.32), transparent 30%),
-        linear-gradient(135deg, #f8f2ea 0%, #fcfaf6 53%, #f2e6de 100%);
-    position: relative;
+        radial-gradient(circle at 18% 24%, rgba(190, 117, 96, 0.2), transparent 28%),
+        radial-gradient(circle at 85% 78%, rgba(215, 180, 142, 0.3), transparent 32%),
+        linear-gradient(135deg, #f8eee5 0%, #fcfaf6 58%, #eadbd0 100%);
 }
 
-.hero::before {
-    content: "";
+.hero-overlay {
     position: absolute;
-    width: 420px;
-    height: 420px;
-    border: 1px solid rgba(142, 119, 95, 0.16);
-    border-radius: 50%;
-    top: -210px;
-    left: -210px;
-}
+    inset: 0;
 
-.hero::after {
-    content: "";
-    position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 1px solid rgba(142, 119, 95, 0.12);
-    border-radius: 50%;
-    bottom: -150px;
-    right: -150px;
+    background:
+        radial-gradient(circle at 50% 40%,
+            rgba(255, 255, 255, 0.65),
+            transparent 62%);
 }
 
 .hero-content {
-    max-width: 800px;
     position: relative;
     z-index: 1;
+
+    width: 100%;
+    max-width: 700px;
+
+    text-align: center;
 }
 
-.hero-eyebrow {
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    letter-spacing: 0.32em;
+.eyebrow,
+.section-label {
+    margin: 0 0 14px;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+
     color: var(--clay-dark);
-    margin-bottom: 22px;
 }
 
 .hero h1 {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(4rem, 11vw, 7.5rem);
-    font-weight: 400;
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: clamp(52px, 16vw, 110px);
     line-height: 0.95;
-    letter-spacing: 0;
-    color: var(--ink);
-    animation: rise-in 0.8s ease both;
+    font-weight: 400;
 }
 
 .hero h1 span {
+    display: block;
+
+    margin: 8px 0;
+
+    font-size: 0.45em;
     font-style: italic;
+
     color: var(--clay);
 }
 
-.hero p {
-    max-width: 520px;
-    margin: 28px auto 0;
+.hero-subtitle {
+    max-width: 480px;
+
+    margin: 28px auto 34px;
+
+    font-size: 16px;
+    line-height: 1.7;
+
     color: var(--muted);
-    font-size: 1rem;
-    line-height: 1.8;
 }
 
-/* ========================================
-   BUTTON
-======================================== */
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
-.hero a,
+    min-height: 54px;
+    width: min(100%, 260px);
+
+    padding: 15px 24px;
+
+    border-radius: 999px;
+
+    background: var(--ink);
+    color: #fff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow:
+        0 8px 24px rgba(48, 42, 37, 0.16);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+.hero-button:hover {
+    background: var(--clay-dark);
+    transform: translateY(-2px);
+}
+
+.hero-button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================================
+   UPLOAD SECTION
+========================================= */
+
+.upload-section {
+    padding: 70px 16px;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.section-content h2 {
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: clamp(38px, 10vw, 64px);
+    line-height: 1.05;
+    font-weight: 400;
+}
+
+.section-description {
+    max-width: 600px;
+
+    margin: 20px auto 36px;
+
+    color: var(--muted);
+
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* =========================================
+   UPLOAD BOX
+========================================= */
+
+.upload-box {
+    width: 100%;
+
+    padding: 38px 20px;
+
+    border: 1.5px dashed #c8a99a;
+    border-radius: 16px;
+
+    background: rgba(255, 253, 249, 0.78);
+    box-shadow: 0 20px 60px rgba(78, 48, 35, 0.08);
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+.upload-box:hover {
+    border-color: var(--clay);
+    background: var(--paper);
+}
+
+.upload-icon {
+    margin-bottom: 16px;
+
+    width: 64px;
+    height: 64px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #f1ddd4;
+    color: var(--clay-dark);
+    font-size: 34px;
+}
+
+.upload-box h3 {
+    margin: 0 0 8px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 27px;
+    font-weight: 400;
+}
+
+.upload-box p {
+    margin: 0 0 22px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
 .choose-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 30px;
-    padding: 15px 30px;
-    border-radius: 999px;
+
+    width: 100%;
+    max-width: 280px;
+
+    min-height: 54px;
+
+    padding: 15px 22px;
+
+    border-radius: 12px;
+
     background: var(--ink);
-    color: #ffffff;
-    text-decoration: none;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.82rem;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    border: none;
+    color: #fff;
+
     cursor: pointer;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 20px rgba(48, 42, 37, 0.14);
+
     transition:
         transform 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+        background 0.2s ease;
 }
 
-.hero a:hover,
 .choose-button:hover {
     background: var(--clay-dark);
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(48, 43, 39, 0.16);
+    transform: translateY(-1px);
 }
 
-/* ========================================
-   MEMORIES SECTION
-======================================== */
-
-.memories {
-    padding: 100px 20px;
-    background: var(--paper);
+.choose-button:active {
+    transform: scale(0.98);
 }
 
-.memories-header {
-    max-width: 680px;
-    margin: 0 auto 55px;
-    text-align: center;
+.upload-limit {
+    margin-top: 18px !important;
+    margin-bottom: 0 !important;
+
+    font-size: 12px !important;
 }
 
-.section-label {
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.3em;
-    color: var(--clay);
-    margin-bottom: 14px;
+
+/* =========================================
+   PREVIEW SECTION
+========================================= */
+
+.preview-section {
+    width: 100%;
+
+    margin-top: 28px;
+
+    text-align: left;
 }
 
-.memories h2 {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: clamp(2.2rem, 5vw, 3.5rem);
-    font-weight: 400;
-    color: #292623;
-}
-
-.memories-header p {
-    margin-top: 18px;
-    color: #817871;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.92rem;
-    line-height: 1.8;
-}
-
-/* ========================================
-   UPLOAD SECTION
-======================================== */
-
-.upload-section {
-    max-width: 780px;
-    margin: 0 auto;
-}
-
-.upload-card {
-    padding: 45px;
-    border: 1px solid var(--line);
-    border-radius: 20px;
-    background: rgba(255, 253, 249, 0.8);
-    box-shadow:
-        0 24px 70px rgba(82, 55, 43, 0.09);
-}
-
-/* ========================================
-   UPLOAD AREA
-======================================== */
-
-.upload-box {
-    padding: 55px 25px;
-    border: 1.5px dashed #c6a99d;
-    border-radius: 20px;
-    text-align: center;
-    background: linear-gradient(145deg, #ffffff, #fcf8f3);
-    transition:
-        background 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.upload-box:hover,
-.upload-box.dragging {
-    background: #fff9f4;
-    border-color: var(--clay);
-    transform: translateY(-2px);
-}
-
-.upload-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
+.preview-header {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: #f1ddd5;
-    color: var(--clay-dark);
-    font-size: 1.8rem;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
 }
 
-.upload-box h3 {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 1.4rem;
+.preview-header h3 {
+    margin: 0;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 27px;
     font-weight: 400;
-    color: #302b27;
 }
-
-.upload-box p {
-    margin-top: 9px;
-    color: #8b8179;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.82rem;
-}
-
-#photoInput {
-    display: none;
-}
-
-/* ========================================
-   PHOTO COUNT
-======================================== */
 
 #photoCount {
-    margin: 18px 0;
-    text-align: center;
-    color: #81766d;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.82rem;
+    flex-shrink: 0;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: #f0ddd4;
+
+    color: var(--clay-dark);
+
+    font-size: 12px;
+    font-weight: 600;
 }
 
-/* ========================================
+
+/* =========================================
    PREVIEW GRID
-======================================== */
+========================================= */
 
 .preview-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 25px;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 9px;
 }
 
-.photo-preview {
-    position: relative;
-    overflow: hidden;
-    aspect-ratio: 1;
-    border-radius: 10px;
-    background: #eee9e4;
-}
-
-.photo-preview img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.preview-grid img {
     display: block;
-    transition: transform 0.45s ease;
-}
 
-.photo-preview:hover img {
-    transform: scale(1.05);
-}
-
-.remove-photo {
-    position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 30px;
-    height: 30px;
-    border: none;
-    border-radius: 50%;
-    background: rgba(35, 31, 28, 0.78);
-    color: #ffffff;
-    font-size: 1.1rem;
-    cursor: pointer;
-}
-
-/* ========================================
-   SEND BUTTON
-======================================== */
-
-#submitButton {
     width: 100%;
-    margin-top: 25px;
-    padding: 16px;
-    border: none;
-    border-radius: 999px;
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 9px;
+
+    background: #e4d5ca;
+    box-shadow: 0 8px 20px rgba(78, 48, 35, 0.09);
+    transition: transform 0.35s ease, filter 0.35s ease;
+}
+
+.preview-grid img:hover {
+    transform: translateY(-3px) scale(1.015);
+    filter: saturate(1.08);
+}
+
+
+/* =========================================
+   SEND BUTTON
+========================================= */
+
+.submit-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 56px;
+
+    margin-top: 20px;
+    padding: 15px 20px;
+
+    border: 0;
+    border-radius: 13px;
+
     background: var(--ink);
-    color: #ffffff;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.85rem;
+    color: white;
+
+    font-size: 15px;
     font-weight: 600;
+
     cursor: pointer;
+
+    box-shadow:
+        0 8px 22px rgba(48, 42, 37, 0.14);
+
     transition:
         background 0.2s ease,
         transform 0.2s ease;
 }
 
-#submitButton:hover:not(:disabled) {
+.submit-button:hover {
     background: var(--clay-dark);
     transform: translateY(-1px);
 }
 
-#submitButton:disabled {
+.submit-button:active {
+    transform: scale(0.99);
+}
+
+.submit-button:disabled {
     opacity: 0.55;
-    cursor: wait;
+    cursor: not-allowed;
+    transform: none;
 }
 
-/* ========================================
-   PRIVATE COLLECTION
-======================================== */
+.privacy-note {
+    margin: 15px 5px 0;
 
-.privacy-section {
-    max-width: 780px;
-    margin: 35px auto 0;
-    padding: 28px 30px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    border-radius: 18px;
-    background: #f4e8e1;
-    text-align: left;
-}
+    text-align: center;
 
-.privacy-icon {
-    font-size: 1.5rem;
-}
+    color: var(--muted);
 
-.privacy-section h3 {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 1rem;
-    font-weight: 400;
-    margin-bottom: 5px;
-}
-
-.privacy-section p {
-    color: #81776f;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.78rem;
+    font-size: 12px;
     line-height: 1.6;
 }
 
-/* ========================================
-   SUCCESS MESSAGE
-======================================== */
 
-#successMessage {
+/* =========================================
+   SUCCESS MESSAGE
+========================================= */
+
+.success-message {
+    margin-top: 28px;
+    padding: 40px 22px;
+
+    border: 1px solid var(--line);
+    border-radius: 16px;
+
+    background: var(--paper);
+
     text-align: center;
-    padding: 40px 20px;
+
+    box-shadow:
+        0 10px 35px rgba(60, 45, 30, 0.08);
 }
 
 .success-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 20px;
-    border-radius: 50%;
+    width: 58px;
+    height: 58px;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #eee7df;
-    font-size: 1.7rem;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: #e8eee7;
+
+    color: #526451;
+
+    font-size: 26px;
+    font-weight: 700;
 }
 
-#successMessage h2 {
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 2rem;
+.success-message h2 {
+    margin: 0 0 12px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 34px;
     font-weight: 400;
 }
 
-#successMessage p {
-    max-width: 430px;
-    margin: 12px auto 0;
-    color: #81776f;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.85rem;
+.success-message p {
+    max-width: 420px;
+
+    margin: 0 auto 24px;
+
+    color: var(--muted);
+
     line-height: 1.7;
 }
 
-#addMoreButton {
-    margin-top: 22px;
-    padding: 12px 24px;
-    border: 1px solid #c9bbad;
-    border-radius: 999px;
+.secondary-button {
+    min-height: 48px;
+
+    padding: 12px 20px;
+
+    border: 1px solid #cbb2a5;
+    border-radius: 11px;
+
     background: transparent;
-    color: #514941;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 0.8rem;
+    color: var(--ink);
+
     font-weight: 600;
+
     cursor: pointer;
 }
 
-/* ========================================
-   FOOTER
-======================================== */
 
-footer {
-    padding: 45px 20px;
-    text-align: center;
-    background: #2c2927;
-    color: #bdb2a8;
-    font-family: "DM Sans", Arial, sans-serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.04em;
+/* =========================================
+   PRIVACY SECTION
+========================================= */
+
+.privacy-section {
+    padding: 0 16px 60px;
 }
 
-footer strong {
-    display: block;
-    margin-bottom: 8px;
-    color: #eee8e1;
-    font-family: "Playfair Display", Georgia, serif;
-    font-size: 1rem;
+.privacy-card {
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin: 0 auto;
+    padding: 22px;
+
+    border: 1px solid var(--line);
+    border-radius: 14px;
+
+    background: #f1e3da;
+}
+
+.lock-icon {
+    flex-shrink: 0;
+
+    font-size: 25px;
+}
+
+.privacy-card h3 {
+    margin: 0 0 6px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 21px;
     font-weight: 400;
 }
 
-/* ========================================
-   HIDDEN
-======================================== */
+.privacy-card p {
+    margin: 0;
 
-[hidden] {
-    display: none !important;
+    color: var(--muted);
+
+    font-size: 13px;
+    line-height: 1.65;
 }
 
-/* ========================================
-   MOBILE
-======================================== */
 
-@media (max-width: 600px) {
+/* =========================================
+   FOOTER
+========================================= */
 
-    .hero {
-        min-height: 75vh;
-        padding: 60px 20px;
-    }
+footer {
+    padding: 30px 20px 40px;
 
-    .hero h1 {
-        font-size: clamp(3.4rem, 17vw, 5rem);
-    }
+    text-align: center;
 
-    .hero p {
-        font-size: 0.95rem;
-    }
+    border-top: 1px solid var(--line);
+    background: #2d2926;
+    color: #f2e8df;
+}
 
-    .memories {
-        padding: 70px 15px;
-    }
+footer p {
+    margin: 0 0 6px;
 
-    .upload-card {
-        padding: 18px;
-        border-radius: 19px;
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 21px;
+}
+
+footer span {
+    color: #c8b7ab;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (min-width: 600px) {
+
+    .upload-section {
+        padding: 90px 24px;
     }
 
     .upload-box {
-        padding: 42px 18px;
+        padding: 50px 35px;
     }
 
     .preview-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 9px;
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 12px;
     }
 
     .privacy-section {
-        padding: 22px;
-        align-items: flex-start;
+        padding-left: 24px;
+        padding-right: 24px;
     }
 }
 
-/* ========================================
-   SMALL PHONES
-======================================== */
 
-@media (max-width: 380px) {
+/* =========================================
+   DESKTOP
+========================================= */
 
-    .hero h1 {
-        font-size: 3.1rem;
+@media (min-width: 900px) {
+
+    .hero {
+        min-height: 760px;
     }
 
-    .upload-card {
-        padding: 12px;
+    .upload-section {
+        padding-top: 120px;
+        padding-bottom: 120px;
     }
 
     .upload-box {
-        padding: 35px 14px;
+        padding: 60px;
+    }
+
+    .preview-grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+
+        gap: 14px;
+    }
+
+    .privacy-section {
+        padding-bottom: 90px;
     }
 }
 
-button,
-a {
-    -webkit-tap-highlight-color: transparent;
-}
 
-button:focus-visible,
-a:focus-visible,
-.upload-box:focus-within {
-    outline: 3px solid rgba(165, 111, 97, 0.35);
-    outline-offset: 4px;
-}
-
-@keyframes rise-in {
-    from {
-        opacity: 0;
-        transform: translateY(14px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+/* =========================================
+   REDUCED MOTION
+========================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
 
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
-        transition-duration: 0.01ms !important;
+        transition: none !important;
+        animation: none !important;
     }
+}
+
+button:focus-visible,
+a:focus-visible,
+label:focus-visible {
+    outline: 3px solid rgba(163, 102, 86, 0.35);
+    outline-offset: 3px;
 }
