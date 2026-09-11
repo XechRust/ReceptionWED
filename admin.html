@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Chloe & Dylan — Admin</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <main class="admin-page">
+
+        <!-- LOGIN -->
+
+        <section id="loginSection" class="login-section">
+
+            <div class="login-card">
+
+                <div class="admin-mark">
+                    🔒
+                </div>
+
+                <p class="eyebrow">
+                    CHLOE & DYLAN
+                </p>
+
+                <h1>
+                    Wedding Admin
+                </h1>
+
+                <p class="login-description">
+                    Sign in to view the private wedding photo collection.
+                </p>
+
+                <form id="loginForm">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Admin email"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        id="loginButton"
+                    >
+                        Sign In
+                    </button>
+
+                    <p
+                        id="loginError"
+                        class="error-message"
+                        hidden
+                    ></p>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADMIN DASHBOARD -->
+
+        <section
+            id="adminSection"
+            class="admin-section"
+            hidden
+        >
+
+            <header class="admin-header">
+
+                <div>
+                    <p class="eyebrow">
+                        CHLOE & DYLAN
+                    </p>
+
+                    <h1>
+                        Wedding Photos
+                    </h1>
+
+                    <p id="photoTotal">
+                        Loading photos...
+                    </p>
+                </div>
+
+                <div class="admin-actions">
+
+                    <button
+                        type="button"
+                        id="refreshButton"
+                    >
+                        Refresh
+                    </button>
+
+                    <button
+                        type="button"
+                        id="logoutButton"
+                    >
+                        Sign Out
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- PHOTO GALLERY -->
+
+            <div
+                id="photoGallery"
+                class="photo-gallery"
+            ></div>
+
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="emptyState"
+                class="empty-state"
+                hidden
+            >
+
+                <div class="empty-icon">
+                    📷
+                </div>
+
+                <h2>
+                    No photos yet
+                </h2>
+
+                <p>
+                    Photos uploaded by guests will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- LOADING -->
+
+            <div
+                id="loadingState"
+                class="loading-state"
+            >
+                Loading private collection...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
